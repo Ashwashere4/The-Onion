@@ -18,11 +18,17 @@ INSERT INTO recipes(recipe, rating, url, tags) VALUES
 ('CHEESE', 5, 'test :d', (array[1,2,3,4,5]));
 
 INSERT INTO tags(tag) VALUES
-('Breakfast'),
-('Lunch'),
-('Dinner'),
-('Dessert'),
-('Vegan'),
-('Vegetarian');
+('breakfast'),
+('lunch'),
+('dinner'),
+('dessert'),
+('vegan'),
+('vegetarian'), 
+('gluten free'),
+('sugar free'),
+('natural sugar'),
+('quick and easy'),
+('baking'),
+('frying')
 
 

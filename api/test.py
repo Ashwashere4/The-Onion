@@ -7,20 +7,14 @@ def main():
 
     connect()
 
-    print(getRecipes())
+    print(getTags())
 
-    addRecipe('Cookies', 5, 'https://joyfoodsunshine.com/the-most-amazing-chocolate-chip-cookies/', [1, 2, 3])
+    addTag('Healthy')
 
-    print(getRecipes())
+    print(getTags())
 
-    deleteRecipe(1)
+    removeTag(getTagIDByName('healthy'))
 
-    print(getRecipes())
-
-    print(getURL(2)[0])
-
-    print(getTags(2))
-
-
+    print(getTags())
 
 main()

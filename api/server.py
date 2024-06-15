@@ -5,7 +5,6 @@ import utility
 import flaskRestful
 import databaseAPI
 
-
 app = Flask(__name__)
 CORS(app)
 api = Api(app)
@@ -22,4 +21,4 @@ if __name__ == '__main__':
     print("DataBase loaded")
     print("Starting Flask")
     app.run(debug=True) 
-    print("Flask Running")
+    print("Flask Closed")

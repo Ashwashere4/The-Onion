@@ -15,11 +15,11 @@ CREATE TABLE tags(
 );
 
 INSERT INTO recipes(recipe, url, tags) VALUES
-('Grandma s Chicken Casserole', 
+('Grandma''s Chicken Casserole', 
 'https://www.justtherecipe.com/?url=https://www.bettycrocker.com/recipes/grandmas-chicken-casserole/697d271e-3fc2-4357-a678-f97bfa43972a', 
 (array[3, 11])
 ),
-('MF Doom s Villaionous Mac and Cheeze', 
+('MF Doom''s Villaionous Mac and Cheeze', 
 'https://www.justtherecipe.com/?url=https://hiphophero.com/revisit-mf-dooms-villainous-mac-and-cheese-recipe/',
 (array[3,11])
 ), 

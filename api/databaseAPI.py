@@ -32,7 +32,6 @@ def search(input):
 
     return result
 
-
 def addRecipe(name, rating, url, tags):
     exec_commit('INSERT INTO recipes(recipe, rating, url, tags) VALUES (%s, %s, %s, %s)', [name.lower(), rating, 'https://www.justtherecipe.com/?url='+url, tags])
 
@@ -46,9 +45,9 @@ def removeTag(id):
 
 
 def getRecipes():
-    result = exec_get_all('select recipe, url FROM recipes')
+    result = exec_get_all('select json_agg(t) from ( SELECT recipe, url FROM recipes) t')
 
-    return result
+    return result[0][0]
 
 def getTags():
     result = exec_get_all('select tag FROM tags')

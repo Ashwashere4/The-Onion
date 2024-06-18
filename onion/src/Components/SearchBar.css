@@ -3,7 +3,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: transparent;
+  /* background-color: transparent; */
 }
 
 .searchInputs {
@@ -40,31 +40,33 @@
   }
   
   .dataResult {
-    margin-top: 5px;
-    height: 400px;
-    background-color: transparent;
-    text-align: left;
-    font-size: 18px;
+    /* padding: 50px; */
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap:wrap;
     align-items: center;
-    direction: ltr;
-    justify-content: space-evenly;
-    border-spacing:1px ;
-    overflow: hidden;
-    overflow-y: auto;
-    flex-direction:row;
-    
+    margin-top: 5px;
+    background-color: transparent;
+    font-size: 18px;
+    border-spacing: 4px;
+    overflow-x: auto;
+
 
   }
   
-  .dataResult::-webkit-scrollbar {
+  /* .dataResult::-webkit-scrollbar {
     display: none;
-  }
+  } */
   
   .dataResult .dataItem {
     
     margin:50px;
     background-color: transparent;
-  
+    justify-content: center;
+    /* fle */
+    
+    /* display: flex; */
     }
   
   .dataItem p {

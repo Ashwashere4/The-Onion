@@ -18,6 +18,7 @@ function SearchBar({placeholder, data}){
 
             const tagsMatch = value.tags.toLowerCase().includes(searchWord.toLowerCase())
             const recipeMatch = value.recipe.toLowerCase().includes(searchWord.toLowerCase())
+
             return tagsMatch || recipeMatch;
         });
 
@@ -48,7 +49,7 @@ function SearchBar({placeholder, data}){
                 </div>
             </div>
         </div>
-        {filteredData.length !== 0 && (
+        {filteredData.length !== 0 ? 
             <div className = "dataResult">
                 {filteredData.map((value, key) => {
                     return <a className = "dataItem" href={value.url} target = "_blank" rel="noreferrer"> 
@@ -57,10 +58,19 @@ function SearchBar({placeholder, data}){
                     
                 })}
             </div>
-            )}
+        :
+            <div className = "dataResult">
+                {data.map((value, key) => {
+                    return <a className = "dataItem" href={value.url} target = "_blank" rel="noreferrer"> 
+                        <DataCard title = {value.recipe} tags = {value.tags} />
+                        </a>
+            
+                })}
+            </div>
+            }
         </div>
+
     )
+
 }
-
-
 export default SearchBar

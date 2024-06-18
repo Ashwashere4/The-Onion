@@ -45,7 +45,7 @@ def removeTag(id):
 
 
 def getRecipes():
-    result = exec_get_all('select json_agg(t) from ( SELECT recipe, url FROM recipes) t')
+    result = exec_get_all("select json_agg(t) from ( select recipes.id, recipe, url, STRING_AGG(tag, ', ' ORDER BY tag) AS tags from recipes inner join tags on tags.id = ANY(tags) GROUP BY recipes.id, url) t")
 
     return result[0][0]
 

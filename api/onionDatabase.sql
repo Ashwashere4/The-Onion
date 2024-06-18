@@ -56,8 +56,6 @@ INSERT INTO recipes(recipe, url, tags) VALUES
 (array[3, 15])
 );
 
-
-
 INSERT INTO tags(tag) VALUES
 ('breakfast'),
 ('lunch'),

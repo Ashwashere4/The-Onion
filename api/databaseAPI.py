@@ -27,16 +27,10 @@ def getTagIDByName(name):
 
 
 def search(input):
-    
-    seachDict = {}
 
-    result = exec_get_all('select recipe from recipes inner join tags on tags.id = ANY(tags) where recipes.recipe Like %s or tags.tag Like %s', ['%'+input+'%', '%'+input+'%'])
+    result = exec_get_all('select DISTINCT(recipes.id), recipe from recipes inner join tags on tags.id = ANY(tags) where recipes.recipe ILike %s or tags.tag ILike %s', ['%'+input+'%', '%'+input+'%'])
 
-    for i in result:
-        seachDict[i[0]] = getTagsFromRecipe(getRecipeIDByName(i[0]))
-
-    return seachDict
-
+    return result
 
 def addRecipe(name, rating, url, tags):
     exec_commit('INSERT INTO recipes(recipe, rating, url, tags) VALUES (%s, %s, %s, %s)', [name.lower(), rating, 'https://www.justtherecipe.com/?url='+url, tags])
@@ -51,9 +45,9 @@ def removeTag(id):
 
 
 def getRecipes():
-    result = exec_get_all('select recipe, rating FROM recipes')
+    result = exec_get_all('select json_agg(t) from ( SELECT recipe, url FROM recipes) t')
 
-    return result
+    return result[0][0]
 
 def getTags():
     result = exec_get_all('select tag FROM tags')

@@ -19,9 +19,9 @@ INSERT INTO recipes(recipe, url, tags) VALUES
 'https://www.justtherecipe.com/?url=https://www.bettycrocker.com/recipes/grandmas-chicken-casserole/697d271e-3fc2-4357-a678-f97bfa43972a', 
 (array[3, 11])
 ),
-('MF Doom''s Villaionous Mac and Cheeze', 
+('MF Doom''s Villainous Mac and Cheese', 
 'https://www.justtherecipe.com/?url=https://hiphophero.com/revisit-mf-dooms-villainous-mac-and-cheese-recipe/',
-(array[3,11])
+(array[3, 11])
 ), 
 ('Instant Pot Pulled Pork',
 'https://www.justtherecipe.com/?url=https://www.wellplated.com/instant-pot-pulled-pork/',
@@ -29,15 +29,15 @@ INSERT INTO recipes(recipe, url, tags) VALUES
 ),
 ('Instant Pot Chicken and Dumplings',
 'https://youtu.be/oDw-9P1vphE',
-(array[3,13])
+(array[3, 13])
 ),
 ('Baked Ziti',
 'https://www.justtherecipe.com/?url=https://www.simplyrecipes.com/recipes/baked_ziti/',
-(array[3,11])
+(array[3, 11])
 ),
 ('The Best Chocolate Chip Cookie Recipe Ever',
 'https://justtherecipe.com/?url=https://joyfoodsunshine.com/the-most-amazing-chocolate-chip-cookies/',
-(array[4,11])
+(array[4, 11])
 ),
 ('The Ultimate Potato Soup Recipe', 
 'https://www.justtherecipe.com/?url=https://sugarspunrun.com/creamy-potato-soup-recipe/',

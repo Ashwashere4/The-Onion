@@ -20,5 +20,5 @@ if __name__ == '__main__':
     utility.exec_sql_file('onionDatabase.sql')
     print("DataBase loaded")
     print("Starting Flask")
-    app.run(debug=True) 
+    app.run(host = '192.168.50.228') 
     print("Flask Closed")

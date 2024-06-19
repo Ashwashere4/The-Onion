@@ -1,13 +1,15 @@
 .card{
-    border: 1px solid black;
+    /* border: 1px solid black; */
     border-radius: 10px;
     box-shadow: 5px 5px 5px hsla(0, 0%, 0%, 0.1);
     padding: 20px;
     text-align: left;
-    width: 150px;
+    width: 400px;
+    display: block;
     justify-content: center;
+
     /* flex-direction:row; */
-    background-color: transparent;
+    background-color: white;
     
 }
 
@@ -18,6 +20,7 @@
 .card .card-title{
     font-family: Arial, sans-serif;
     font-size: 20px;
+    margin-bottom: 10px;
 
 
     color: hsl(0, 0%, 20%);

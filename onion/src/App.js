@@ -41,16 +41,11 @@ class App extends React.Component{
   }
 
   updateDatabase = () =>{
-    fetch('http://127.0.0.1:5000/recipes')
+    fetch('http://192.168.50.228:5000/recipes')
     .then((response) => response.json()
     .then((database) => (this.setState({database : database}))))
   }
 
-  // searchDatabase = (search) =>{
-  //   fetch('http://127.0.0.1:5000/search/${search}')
-  //   .then((response) => response.json()
-  //   .then(()))
-  // }
 
   render(){
     return (

@@ -11,7 +11,15 @@
     background-color: transparent;
     border-bottom-style: solid;
     border-bottom-width: 2.5px;
+    
   }
+
+  /* .searchInputs ::placeholder{
+    /* color: black; */
+    /* font-size: 25px; */
+    /* -webkit-text-stroke-width: 1px; */
+    /* -webkit-text-stroke-color: white; */
+    /* } */
   
   .search input {
     background-color: transparent;
@@ -66,7 +74,6 @@
     justify-content: center;
     /* fle */
     
-    /* display: flex; */
     }
   
   .dataItem p {

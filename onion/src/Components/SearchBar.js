@@ -14,25 +14,33 @@ function SearchBar({placeholder, data}){
     const handleFilter = (event) => {
         const searchWord = event.target.value
         setwordEntered(searchWord);
+
         const newFilter = data.filter((value) => {
 
-            const tagsMatch = value.tags.toLowerCase().includes(searchWord.toLowerCase())
-            const recipeMatch = value.recipe.toLowerCase().includes(searchWord.toLowerCase())
+            const list = searchWord.toLowerCase().split(', ')
+            let tagsMatch = ''
+            let recipeMatch = ''
 
+            for (let i = 0; i < list.length; i++){
+
+            tagsMatch = value.tags.toLowerCase().includes(list[i])
+
+            recipeMatch = value.recipe.toLowerCase().includes(list[i])
+
+            }
             return tagsMatch || recipeMatch;
         });
 
-        if(searchWord === "" ){
+        if(searchWord === '' ){
             setFilteredData([])
         } else{
-
         setFilteredData(newFilter);
     }
 };
 
     const clearInput = () => {
         setFilteredData([]);
-        setwordEntered("");
+        setwordEntered('');
 
     }
     

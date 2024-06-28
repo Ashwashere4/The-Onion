@@ -2,18 +2,16 @@ import logo from './logo.png';
 import './App.css';
 import SearchBar from './Components/SearchBar';
 import React from 'react'
+import AddModal from './Components/AddModal';
+// import Button from '@mui/material/Button';
 
 class App extends React.Component{
 
   listOfTitles = [
-    "What are we making today?",
-    "Feeling Saucy?",
-    "Chat! Let. Them. COOK!",
-    "Breakfast, Lunch, Dinner! We got em all!",
-    "Midnight snack? Na, just an early breakfast",
-    "Breakfast Dinner! Dinner Breakfast!",
-    "[Insert Text Here]",
-    "Not to be confused with the journal..."
+    "What are we making today?", "Feeling Saucy?", "Chat! Let. Them. COOK!",
+    "Breakfast, Lunch, Dinner! We got em all!", "Midnight snack? Na, just an early breakfast",
+    "Breakfast Dinner! Dinner Breakfast!", "[Insert Text Here]",
+    "Not to be confused with the journal...", "Winner Winner, Chicken Dinner!"
   ];
 
   changeTitle = () =>{
@@ -51,6 +49,8 @@ class App extends React.Component{
     return (
       <div className="App">
         <header className="App-header">
+        <AddModal/>
+
           {/* Get a new logo because copyright bullshit */}
           <img src={logo} className="App-logo" alt="logo" /> 
           <p>

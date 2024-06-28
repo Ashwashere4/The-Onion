@@ -14,12 +14,9 @@
     
   }
 
-  /* .searchInputs ::placeholder{
-    /* color: black; */
-    /* font-size: 25px; */
-    /* -webkit-text-stroke-width: 1px; */
-    /* -webkit-text-stroke-color: white; */
-    /* } */
+   .searchInputs ::placeholder{
+    color: black;    
+     } 
   
   .search input {
     background-color: transparent;

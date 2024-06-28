@@ -1,0 +1,13 @@
+.Info{
+    
+    position: absolute;
+    top: 40%;
+    left: 39%;
+    width: 400px;
+    text-align: center;
+    box-shadow: 5px 5px 5px hsla(0, 0%, 0%, 0.1);
+    justify-content: center;
+    border-radius: 10px;
+    padding: 20px;
+    background-color: bisque;
+}

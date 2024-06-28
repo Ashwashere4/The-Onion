@@ -18,17 +18,15 @@ function SearchBar({placeholder, data}){
         const newFilter = data.filter((value) => {
 
             const list = searchWord.toLowerCase().split(', ')
-            let tagsMatch = ''
-            let recipeMatch = ''
 
-            for (let i = 0; i < list.length; i++){
+            const allMatch = list.every((keyword) => {
+                const tagsMatch = value.tags.toLowerCase().includes(keyword);
+                const recipeMatch = value.recipe.toLowerCase().includes(keyword);
 
-            tagsMatch = value.tags.toLowerCase().includes(list[i])
+                return tagsMatch || recipeMatch;
+            });
 
-            recipeMatch = value.recipe.toLowerCase().includes(list[i])
-
-            }
-            return tagsMatch || recipeMatch;
+            return allMatch
         });
 
         if(searchWord === '' ){
@@ -44,8 +42,6 @@ function SearchBar({placeholder, data}){
 
     }
     
-
-
     return (
         <div>
         <div className="search">
@@ -59,7 +55,7 @@ function SearchBar({placeholder, data}){
         </div>
         {filteredData.length !== 0 ? 
             <div className = "dataResult">
-                {filteredData.map((value, key) => {
+                {filteredData.slice(0,15).map((value, key) => {
                     return <a className = "dataItem" href={value.url} target = "_blank" rel="noreferrer"> 
                         <DataCard title = {value.recipe} tags = {value.tags} />
                         </a>

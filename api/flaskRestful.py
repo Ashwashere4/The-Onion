@@ -19,25 +19,48 @@ class GetRecipes(Resource):
 class DeleteRecipes(Resource):
     def delete(self, primaryid):
 
-        print(primaryid)
-
         if (primaryid != None):
+            print(primaryid)
             databaseAPI.deleteRecipe(primaryid)
 
             return ("Course Deleted", 202)
         
         else:
             return ("ERROR, COURSE DOES NOT EXIST")
+
+
+
+class AddRecipes(Resource):
+    def put(self):
+
+        parser = reqparse.RequestParser()
+        parser.add_argument('recipe', type = str)
+        parser.add_argument('url', type= str)
+        parser.add_argument('tags')
+
+        args = parser.parse_args()
+
+        databaseAPI.addRecipe(args['recipe'], args['url'], args['tags'])
+
+        return ("Recipe Created")
         
 
-class SearchRecipes(Resource):
 
-    def get(self, search): 
+class UpdateRecipes(Resource):
+    def put(self, primaryid):
 
-        searchResult = []
-        recipes = databaseAPI.search(search)
+        if primaryid != None:
+            parser = reqparse.RequestParser()
+            parser.add_argument('recipe', type = str)
+            parser.add_argument('url', type = str)
+            parser.add_argument('tags')
 
-        for i in recipes:
-            searchResult.append(i)
-        
-        return searchResult
+
+            args = parser.parse_args()
+
+            databaseAPI.updateRecipe(primaryid, args['recipe'], args['url'], args['tags'])
+
+            return("Course Updated", 202)
+
+        else:
+            return("Error, Course Doesn't Exist", 406)

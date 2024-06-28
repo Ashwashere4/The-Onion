@@ -12,12 +12,14 @@ api = Api(app)
 
 api.add_resource(flaskRestful.GetRecipes, "/recipes")
 api.add_resource(flaskRestful.DeleteRecipes, "/recipes/<int:primaryid>")
-api.add_resource(flaskRestful.SearchRecipes, "/search/<string:search>")
+api.add_resource(flaskRestful.AddRecipes, "/recipes/add")
+api.add_resource(flaskRestful.UpdateRecipes, "/recipes/<int:primaryid>")
+
 
 
 if __name__ == '__main__':
     print("Loading DB")
-    utility.exec_sql_file('onionDatabase.sql')
+    utility.connect()
     print("DataBase loaded")
     print("Starting Flask")
     app.run(host = '192.168.50.228') 

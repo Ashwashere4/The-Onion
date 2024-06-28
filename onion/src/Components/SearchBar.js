@@ -55,7 +55,7 @@ function SearchBar({placeholder, data}){
         </div>
         {filteredData.length !== 0 ? 
             <div className = "dataResult">
-                {filteredData.slice(0,15).map((value, key) => {
+                {filteredData.slice(0,20).map((value, key) => {
                     return <a className = "dataItem" href={value.url} target = "_blank" rel="noreferrer"> 
                         <DataCard title = {value.recipe} tags = {value.tags} />
                         </a>

@@ -2,7 +2,7 @@ import logo from './logo.png';
 import './App.css';
 import SearchBar from './Components/SearchBar';
 import React from 'react'
-import AddModal from './Components/AddModal';
+import AdminModal from './Components/AdminModal';
 // import Button from '@mui/material/Button';
 
 class App extends React.Component{
@@ -44,13 +44,36 @@ class App extends React.Component{
     .then((database) => (this.setState({database : database}))))
   }
 
+  deleteRecipe = (primaryid) => {
+    fetch(`http://192.168.50.228:5000/recipes/${primaryid}`, {method: "DELETE"})
+    window.location.reload()
+  }
+
+  addRecipe = (addName, addURL, addTags) => {
+
+    console.log(addName, addURL, addTags)
+    fetch(`http://192.168.50.228:5000/recipes/add`, {method: "PUT", headers: {'Content-Type' : 'application/json'}, body: JSON.stringify({
+      recipe: addName,
+      url: addURL,
+      tags: addTags
+    })}).then(window.location.reload())
+    
+    }
+
+  updateRecipe = (primaryid, updateName, updateURL, updateTags) => {
+
+    fetch(`http://192.168.50.228:5000/recipes/${primaryid}`, {method: "PUT", headers: {'Content-Type' : 'application/json'}, body: JSON.stringify({
+      recipe: updateName,
+      url: updateURL,
+      tags: updateTags
+    })}).then(window.location.reload())
+  }
 
   render(){
     return (
       <div className="App">
         <header className="App-header">
-        <AddModal/>
-
+        <AdminModal deleteButton = {this.deleteRecipe} addButton = {this.addRecipe} updateButton = {this.updateRecipe}/>
           {/* Get a new logo because copyright bullshit */}
           <img src={logo} className="App-logo" alt="logo" /> 
           <p>

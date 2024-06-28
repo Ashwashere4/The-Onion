@@ -32,8 +32,8 @@ def search(input):
 
     return result
 
-def addRecipe(name, rating, url, tags):
-    exec_commit('INSERT INTO recipes(recipe, rating, url, tags) VALUES (%s, %s, %s, %s)', [name.lower(), rating, 'https://www.justtherecipe.com/?url='+url, tags])
+def addRecipe(name, url, tags):
+    exec_commit('INSERT INTO recipes(recipe,url, tags) VALUES (%s, %s, %s)', [name.lower(), url, tags])
 
 
 def addTag(tag):
@@ -66,9 +66,10 @@ def deleteRecipe(primaryid):
     exec_commit('Delete From recipes where id = %s', [primaryid])
 
 
-# def updateRecipe(primaryid):  TO BE DEVELOPED
+def updateRecipe(primaryid, name, url, tags):
 
-#     return 
+    exec_commit('UPDATE recipes SET recipe = %s, url = %s, tags = %s WHERE id = %s', [name, url, tags, primaryid])
+ 
 
 def getURL(primaryid):
 

@@ -1,5 +1,7 @@
-db.yml
+*.yml
 
 node_modules/
 
 password.txt
+
+requirements.txt

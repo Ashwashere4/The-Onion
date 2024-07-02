@@ -22,5 +22,5 @@ if __name__ == '__main__':
     utility.connect()
     print("DataBase loaded")
     print("Starting Flask")
-    app.run(host = '192.168.50.228') 
+    app.run() 
     print("Flask Closed")

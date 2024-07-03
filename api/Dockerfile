@@ -1,11 +1,15 @@
-FROM python:3.10-alpine
+FROM python:3-alpine3.15
 
-COPY requirements.txt . 
+WORKDIR /server
 
-RUN pip3 install -r requirements.txt
+COPY . /server 
+
+COPY requirements.txt ./
+
+RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
 EXPOSE 5432
 
-CMD ["python3", "server.py", "--host=172.18.0.2", port=5432]
+CMD ["python", "app.py"]

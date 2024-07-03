@@ -10,7 +10,6 @@ def connect():
     with open(yml_path, 'r') as file:
         config = yaml.load(file, Loader=yaml.FullLoader)
 
-    print("Attempting to Connect... ")
     while not conn:
         try:
             conn = psycopg2.connect(dbname=config['database'],
@@ -19,18 +18,13 @@ def connect():
                             host=config['host'],
                             port=config['port'])
             
-            print("Database Connection successful")
+            print("Database Connection successful", flush=True)
+
         except psycopg2.OperationalError as e:
-            print(e)
+            print(e, flush=True)
             time.sleep(5)
 
     return conn
-    # 
-    # psycopg2.connect(dbname=config['database'],
-    #                         user=config['user'],
-    #                         password=config['password'],
-    #                         host=config['host'],
-    #                         port=config['port'])
 
 def exec_sql_file(path):
     full_path = os.path.join(os.path.dirname(__file__), f'{path}')

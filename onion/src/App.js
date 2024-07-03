@@ -5,7 +5,11 @@ import React from 'react'
 import AdminModal from './Components/AdminModal';
 // import Button from '@mui/material/Button';
 
+const ip = "192.168.50.228"
+
+
 class App extends React.Component{
+
 
   listOfTitles = [
     "What are we making today?", "Feeling Saucy?", "Chat! Let. Them. COOK!",
@@ -39,20 +43,20 @@ class App extends React.Component{
   }
 
   updateDatabase = () =>{
-    fetch('http://192.168.50.228:5000/recipes')
+    fetch('http://' + ip + ':5000/recipes')
     .then((response) => response.json()
     .then((database) => (this.setState({database : database}))))
   }
 
   deleteRecipe = (primaryid) => {
-    fetch(`http://192.168.50.228:5000/recipes/${primaryid}`, {method: "DELETE"})
+    fetch('http://' + ip + `/recipes/${primaryid}`, {method: "DELETE"})
     window.location.reload()
   }
 
   addRecipe = (addName, addURL, addTags) => {
 
     console.log(addName, addURL, addTags)
-    fetch(`http://192.168.50.228:5000/recipes/add`, {method: "PUT", headers: {'Content-Type' : 'application/json'}, body: JSON.stringify({
+    fetch(`http://` + ip + `/recipes/add`, {method: "PUT", headers: {'Content-Type' : 'application/json'}, body: JSON.stringify({
       recipe: addName,
       url: addURL,
       tags: addTags
@@ -62,7 +66,7 @@ class App extends React.Component{
 
   updateRecipe = (primaryid, updateName, updateURL, updateTags) => {
 
-    fetch(`http://192.168.50.228:5000/recipes/${primaryid}`, {method: "PUT", headers: {'Content-Type' : 'application/json'}, body: JSON.stringify({
+    fetch('http://' + ip + `:5000/recipes/${primaryid}`, {method: "PUT", headers: {'Content-Type' : 'application/json'}, body: JSON.stringify({
       recipe: updateName,
       url: updateURL,
       tags: updateTags

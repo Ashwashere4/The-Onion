@@ -1,7 +1,7 @@
 from flask_restful import Resource, request, reqparse
 import databaseAPI
 
-
+"""Using the flaskAPI returns all recipes"""
 class GetRecipes(Resource):
 
     def get(self):
@@ -16,8 +16,10 @@ class GetRecipes(Resource):
         
         return (recipeList, 201)
     
+
+"""Using the flaskAPI deletes a recipe when given an"""
 class DeleteRecipes(Resource):
-    def delete(self, primaryid):
+    def delete(self, primaryid:int):
 
         if (primaryid != None):
             print(primaryid)
@@ -29,7 +31,7 @@ class DeleteRecipes(Resource):
             return ("ERROR, COURSE DOES NOT EXIST")
 
 
-
+"""Using the flaskAPI adds a recipe"""
 class AddRecipes(Resource):
     def put(self):
 
@@ -45,9 +47,9 @@ class AddRecipes(Resource):
         return ("Recipe Created")
         
 
-
+"""Using the flaskAPI updates a recipe when given an id"""
 class UpdateRecipes(Resource):
-    def put(self, primaryid):
+    def put(self, primaryid:int):
 
         if primaryid != None:
             parser = reqparse.RequestParser()

@@ -26,5 +26,5 @@ jobs:
 
       - name: Build and push Docker image
         run: |
-          echo "${{ secrets.DOCKERHUB_USERNAME }}" | docker login -u "${{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
+          echo "${{ secrets.DOCKERHUB_TOKEN }}" | docker login -u "${{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
           docker-compose up --force-recreate --build -d    

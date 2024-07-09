@@ -1,0 +1,5 @@
+host: db
+database: TheOnion
+user: secrets.POSTGRES_USERNAME
+password: secrets.POSTGRES_PASSWORD
+port: 5432

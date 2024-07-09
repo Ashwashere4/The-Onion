@@ -1,0 +1,29 @@
+version: '3.3'
+
+services: 
+  db: 
+    container_name: TheOnionDB
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: secrets.POSTGRES_USER
+      POSTGRES_PASSWORD: secrets.POSTGRES_PASSWORD
+      POSTGRES_DB: TheOnion
+    ports:
+      - "5432:5432"
+
+  flask_app:
+    container_name: OnionFlask
+    build: /api
+    ports:
+      - 5000:5000
+    links: 
+      - "db:database"
+    depends_on:
+      - db
+
+  front_end:
+    container_name: OnionFront
+    build: /onion
+    ports:
+      - 3000:3000

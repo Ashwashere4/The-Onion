@@ -86,9 +86,7 @@ function AdminModal({deleteButton, addButton, updateButton}){
 
     const checkPassword = () => {
 
-        fetch(raw).then(r => r.text()).then(text=>{
-            
-            if (password === text.trim()){
+            if (password === secrets.ADMIN_PASSWORD){
 
                 setOpen(false)
                 setPasswordStatus(true)
@@ -96,10 +94,9 @@ function AdminModal({deleteButton, addButton, updateButton}){
             } else{
                 console.log('Incorrect Password');
             }
-            }).catch(error => {
-                console.error("Error Fetching Password: ", error)
-            });
+            
         };
+        
     
 
 

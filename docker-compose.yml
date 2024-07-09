@@ -24,6 +24,6 @@ services:
 
   front_end:
     container_name: OnionFront
-    build: /onion
+    build: onion
     ports:
       - 3000:3000

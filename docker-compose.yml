@@ -22,8 +22,8 @@ services:
     depends_on:
       - db
 
-  front_end:
-    container_name: OnionFront
-    build: onion
-    ports:
-      - 3000:3000
+  # front_end:
+  #   container_name: OnionFront
+  #   build: onion
+  #   ports:
+  #     - 3000:3000

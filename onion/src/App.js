@@ -15,7 +15,10 @@ class App extends React.Component{
     "What are we making today?", "Feeling Saucy?", "Chat! Let. Them. COOK!",
     "Breakfast, Lunch, Dinner! We got em all!", "Midnight snack? Na, just an early breakfast",
     "Breakfast Dinner! Dinner Breakfast!", "[Insert Text Here]",
-    "Not to be confused with the journal...", "Winner Winner, Chicken Dinner!"
+    "Not to be confused with the journal...", "Winner Winner, Chicken Dinner!","Lettuce romaine friends.", 
+    "I’m on a seafood diet. I see food and I eat it.", "You’re the apple of my eye.", "This is un-bear-ably good.", 
+    "I doughnut care.", "You’re bacon me crazy.", "Life is gouda.", "I cannoli be happy when I’m with you.", 
+    "You’ve got to be buttering me up!", "I relish the thought of being with you."
   ];
 
   changeTitle = () =>{

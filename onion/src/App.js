@@ -46,20 +46,20 @@ class App extends React.Component{
   }
 
   updateDatabase = () =>{
-    fetch('http://' + ip + ':5000/recipes')
+    fetch('https://' + ip + ':5000/recipes')
     .then((response) => response.json()
     .then((database) => (this.setState({database : database}))))
   }
 
   deleteRecipe = (primaryid) => {
-    fetch('http://' + ip + `/recipes/${primaryid}`, {method: "DELETE"})
+    fetch('https://' + ip + `/recipes/${primaryid}`, {method: "DELETE"})
     window.location.reload()
   }
 
   addRecipe = (addName, addURL, addTags) => {
 
     console.log(addName, addURL, addTags)
-    fetch(`http://` + ip + `/recipes/add`, {method: "PUT", headers: {'Content-Type' : 'application/json'}, body: JSON.stringify({
+    fetch(`https://` + ip + `/recipes/add`, {method: "PUT", headers: {'Content-Type' : 'application/json'}, body: JSON.stringify({
       recipe: addName,
       url: addURL,
       tags: addTags
@@ -69,7 +69,7 @@ class App extends React.Component{
 
   updateRecipe = (primaryid, updateName, updateURL, updateTags) => {
 
-    fetch('http://' + ip + `:5000/recipes/${primaryid}`, {method: "PUT", headers: {'Content-Type' : 'application/json'}, body: JSON.stringify({
+    fetch('https://' + ip + `:5000/recipes/${primaryid}`, {method: "PUT", headers: {'Content-Type' : 'application/json'}, body: JSON.stringify({
       recipe: updateName,
       url: updateURL,
       tags: updateTags

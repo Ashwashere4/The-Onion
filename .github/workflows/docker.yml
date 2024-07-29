@@ -27,4 +27,7 @@ jobs:
       - name: Build and push Docker image
         run: |
           echo "${{ secrets.DOCKERHUB_TOKEN }}" | docker login -u "${{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
-          docker-compose up --force-recreate --build -d    
+          docker-compose up --force-recreate --build -d
+
+      - name: Test API 
+        run: curl https://127.0.0.1:5000/recipes

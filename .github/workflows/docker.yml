@@ -29,8 +29,11 @@ jobs:
           echo "${{ secrets.DOCKERHUB_TOKEN }}" | docker login -u "${{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
           docker-compose up --force-recreate --build -d
 
-      - name: Run Docker image
-        run: docker run -d -p 5000:5000
+      - name: Run Docker DataBase
+        run: docker run -d -p 5432:5432 TheOnionDB
+      
+      - name: Run Docker FlaskApp
+        run: docker run -d -p 3000:3000 OnionFlask
 
       - name: Test API 
         run: curl https://127.0.0.1:5000/recipes

@@ -30,4 +30,4 @@ jobs:
           docker-compose up --force-recreate --build -d
 
       - name: Test API 
-        run: curl localhost:5000/recipes
+        run: curl https://localhost:5000/recipes

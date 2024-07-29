@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/The-Onion/static/css/main.4979b2b7.css",
-    "main.js": "/The-Onion/static/js/main.faa016fe.js",
+    "main.js": "/The-Onion/static/js/main.cfb368b3.js",
     "static/js/453.c61fa3d6.chunk.js": "/The-Onion/static/js/453.c61fa3d6.chunk.js",
     "static/media/logo.png": "/The-Onion/static/media/logo.4eace71287f810ada010.png",
     "index.html": "/The-Onion/index.html",
     "static/media/password.txt": "/The-Onion/static/media/password.b0a4004be546a13dcfd2.txt",
     "main.4979b2b7.css.map": "/The-Onion/static/css/main.4979b2b7.css.map",
-    "main.faa016fe.js.map": "/The-Onion/static/js/main.faa016fe.js.map",
+    "main.cfb368b3.js.map": "/The-Onion/static/js/main.cfb368b3.js.map",
     "453.c61fa3d6.chunk.js.map": "/The-Onion/static/js/453.c61fa3d6.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.4979b2b7.css",
-    "static/js/main.faa016fe.js"
+    "static/js/main.cfb368b3.js"
   ]
 }

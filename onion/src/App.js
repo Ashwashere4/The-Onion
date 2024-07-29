@@ -5,7 +5,7 @@ import React from 'react'
 import AdminModal from './Components/AdminModal';
 // import Button from '@mui/material/Button';
 
-const ip = "192.168.50.228"
+const ip = "localhost"
 
 
 class App extends React.Component{

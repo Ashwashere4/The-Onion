@@ -30,10 +30,10 @@ jobs:
           docker-compose up --force-recreate --build -d
 
       - name: Run Docker DataBase
-        run: docker run -d -p 5432:5432 TheOnionDB
+        run: docker run -d -p 5432:5432 theoniondb
       
       - name: Run Docker FlaskApp
-        run: docker run -d -p 3000:3000 OnionFlask
+        run: docker run -d -p 3000:3000 onionflask
 
       - name: Test API 
         run: curl https://127.0.0.1:5000/recipes

@@ -29,8 +29,5 @@ jobs:
           echo "${{ secrets.DOCKERHUB_TOKEN }}" | docker login -u "${{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
           docker-compose up --force-recreate --build -d
 
-      - name: Run Docker FlaskApp
-        run: docker run -d -p 3000:3000 the-onion_flask_app
-
       - name: Test API 
-        run: curl https://127.0.0.1:5000/recipes
+        run: curl localhost:5000/recipes

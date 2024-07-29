@@ -86,7 +86,7 @@ function AdminModal({deleteButton, addButton, updateButton}){
 
     const checkPassword = () => {
 
-            if (password === secrets.ADMIN_PASSWORD){
+            if (password === raw.read()){
 
                 setOpen(false)
                 setPasswordStatus(true)

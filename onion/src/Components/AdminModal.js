@@ -3,7 +3,6 @@ import {React, useState} from "react";
 import { Box, Button, Modal, Typography } from "@mui/material";
 import './AdminModal.css'
 import '../App'
-import raw from './password.txt'
 
 function AdminModal({deleteButton, addButton, updateButton}){
     
@@ -86,7 +85,7 @@ function AdminModal({deleteButton, addButton, updateButton}){
 
     const checkPassword = () => {
 
-            if (password === raw.read()){
+            if (password === "password"){
 
                 setOpen(false)
                 setPasswordStatus(true)

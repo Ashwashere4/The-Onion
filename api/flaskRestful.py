@@ -62,7 +62,7 @@ class UpdateRecipes(Resource):
 
             databaseAPI.updateRecipe(primaryid, args['recipe'], args['url'], args['tags'])
 
-            return("Course Updated", 202)
+            return("Recipe Updated", 202)
 
         else:
-            return("Error, Course Doesn't Exist", 406)
+            return("Recipe, Course Doesn't Exist", 406)

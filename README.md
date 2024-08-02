@@ -6,6 +6,8 @@ I wanted to refresh myself in react, apis, and databases over the summer so I th
 
 Below are the instructions on how to properly run this server
 
+Note: Password is "password" for admin access, you can change this in the ADMINMODAL.css
+
 ## Prerequisite  (stuff you need installed on your machine)
 
 ### PgAdmin
